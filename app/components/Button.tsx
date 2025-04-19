@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 type ButtonProps = {
@@ -7,7 +8,13 @@ type ButtonProps = {
 export default function Button({text}:ButtonProps){
     return (
         <View style={styles.buttonContainer}>
-            <Text style={styles.text}>{text}</Text>
+            {
+                text === 'Login'? (
+                    <Link  href='/GetStarted' style={styles.text}>{text}</Link>
+                ):(
+                    <Text style={styles.text}>{text}</Text>
+                )
+            }
         </View>
     )
 }
@@ -22,7 +29,7 @@ const styles = StyleSheet.create({
         borderRadius:10
     },
     text:{
-        fontSize:24,
+        fontSize:20,
         fontWeight:'semibold',
         color:"white"
     }

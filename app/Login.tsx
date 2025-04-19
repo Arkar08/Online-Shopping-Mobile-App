@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     },
     imageContainer:{
         width:'100%',
-        height:250,
+        height:200,
         marginTop:10,
         display:"flex",
         justifyContent:"center",
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     },
     image:{
         width:'100%',
-        height:'100%'
+        height:'100%',
+        objectFit:"contain"
     }
 })
