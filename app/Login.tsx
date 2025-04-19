@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     inputContainer:{
         display:"flex",
         gap:30,
-        marginTop:'15%'
+        marginTop:'10%'
     },
     forget:{
         textAlign:"right",
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     },
     imageContainer:{
         width:'100%',
-        height:240,
+        height:250,
         marginTop:10,
         display:"flex",
         justifyContent:"center",

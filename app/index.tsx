@@ -5,10 +5,6 @@ import SplashScreen from "./components/SplashScreen";
 
 const image =  require('@/assets/images/splashIcon.png');
 
-
-
-
-
 export default function Index() {
   
   const [acitve,setActive] = useState(false)
@@ -42,7 +38,9 @@ export default function Index() {
             <View>
               <Image source={image}/>
             </View>
-            <Text style={styles.iconText}>Stylish</Text>
+            <View>
+              <Text style={styles.iconText}>Stylish</Text>
+            </View>
           </View>
         )
       }
