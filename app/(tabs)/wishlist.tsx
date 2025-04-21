@@ -20,11 +20,11 @@ export default function wishlist(){
                 <View style={styles.boxContainer}>
                     <View style={styles.box}>
                         <Text>Sort</Text>
-                        <FontAwesome name="sort" size={18} color="black" />
+                        <FontAwesome name="sort" size={24} color="black" />
                     </View>
                     <View style={styles.box}>
                         <Text>Filter</Text>
-                        <FontAwesome name="filter" size={18} color="black" />
+                        <FontAwesome name="filter" size={24} color="black" />
                     </View>
                 </View>
             </View>
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 1,
         shadowRadius: 1, 
+        borderWidth:0.5
     },
     cardContainer:{
         display:"flex",

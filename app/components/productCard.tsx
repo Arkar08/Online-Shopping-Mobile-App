@@ -14,7 +14,7 @@ export default function ProductCard({text}:productCardProps){
             {
                 text !== 'wishlist' && (
                     <View style={styles.heart}>
-                        <Ionicons name="heart-outline" size={18} color='white' />
+                        <Ionicons name="heart-outline" size={24} color='white' />
                     </View>
                 )
             }
@@ -71,18 +71,21 @@ const styles = StyleSheet.create({
     },
     heart:{
         position:'absolute',
-        top:"0%",
+        top:"0.5%",
         right:'3%',
         zIndex:1000,
-        width:25,
-        height:25,
+        borderWidth:0.5,
+        width:30,
+        height:30,
         display:"flex",
         justifyContent:"center",
         alignItems:'center',
-        shadowColor: 'whitesmoke',
+        boxShadow:'1px',
+        shadowColor: 'white',
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 1,
         shadowRadius: 1, 
-        borderRadius:50
+        borderRadius:50,
+        borderColor:'white'
     }
 })
