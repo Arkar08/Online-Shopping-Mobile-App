@@ -1,6 +1,8 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import Input from "../components/Input";
 import MenuList from "../components/menuList";
+import ProductCard from "../components/productCard";
+import { Link } from "expo-router";
 
 const menuImage = require("@/assets/images/menu.png")
 const avator = require("@/assets/images/avator.png")
@@ -13,14 +15,16 @@ export default function index(){
     return (
         <View style={styles.homeContainer}>
             <View style={styles.header}>
-                <Image source={menuImage}/>
+                <Link href='/(tabs)/setting'>
+                    <Image source={menuImage}/>
+                </Link>
                 <View style={styles.logoContainer}>
                     <Image source={logo}/>
                     <Text style={styles.logoText}>Stylish</Text>
                 </View>
-                <View>
-                    <Image source={avator}/>
-                </View>
+                <Link href='/profile' style={styles.avatorContainer}>
+                    <Image source={avator} style={styles.avator}/>
+                </Link>
             </View>
             <View style={styles.searchContainer}>
                 <Input placeholder="Search Any Products" eyeImage={voice} image={search}/>
@@ -41,6 +45,18 @@ export default function index(){
                     <MenuList />
                 </ScrollView>
             </View>
+            <ScrollView showsVerticalScrollIndicator={false} style={{marginTop:10}}>
+                <View style={styles.cardContainer}>
+                    <ProductCard text='all'/>
+                    <ProductCard text='all'/>
+                    <ProductCard text='all'/>
+                    <ProductCard text='all'/>
+                    <ProductCard text='all'/>
+                    <ProductCard text='all'/>
+                    <ProductCard text='all'/>
+                    <ProductCard text='all'/>
+                </View>
+            </ScrollView>
         </View>
     )
 }
@@ -77,5 +93,26 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         gap:20,
         height:100
+    },
+    cardContainer:{
+        display:"flex",
+        flexDirection:"row",
+        flexWrap:"wrap",
+        width:'100%',
+        gap:20,
+        marginTop:20,
+        justifyContent:"center",
+        alignItems:'center',
+        padding:5
+    },
+    avatorContainer:{
+        width:40,
+        height:40,
+        borderRadius:50
+    },
+    avator:{
+        width:'100%',
+        height:'100%',
+        objectFit:'cover'
     }
 })

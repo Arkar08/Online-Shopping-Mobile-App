@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/splashIcon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.arkar08.Onlineshoppingapp"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +37,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "93b8eb0c-97ec-46a8-bb8d-fdda186f78e1"
+      }
     }
   }
 }

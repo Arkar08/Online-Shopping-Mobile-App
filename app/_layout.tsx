@@ -12,6 +12,7 @@ export default function RootLayout() {
         <Stack.Screen name='Signup' options={{headerShown:false}}/>
         <Stack.Screen name='ForgetPassword' options={{headerShown:false}}/>
         <Stack.Screen name="GetStarted" options={{headerShown:false}}/>
+        <Stack.Screen name="profile" options={{headerTitleAlign:'center',title:"My Profile"}}/>
         <Stack.Screen name='(tabs)' options={{headerShown:false}}/>
       </Stack>
     </>
