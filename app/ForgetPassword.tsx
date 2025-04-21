@@ -1,10 +1,17 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View,Button, Pressable } from "react-native";
 import Input from "./components/Input";
-import Button from "./components/Button";
+import { useRouter } from "expo-router";
 
 const image = require('@/assets/images/Mail.png')
 
 export default function ForgetPassword(){
+
+    const router = useRouter()
+
+    const submit = ()=>{
+        router.replace('/(tabs)')
+    }
+
     return (
         <SafeAreaView>
             <View style={styles.main}>
@@ -21,7 +28,9 @@ export default function ForgetPassword(){
                     <Text style={styles.forget}>*<Text style={styles.text}>We will send you a message to sent or reset your new password.</Text></Text>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <Button text='Submit'/>
+                    <Pressable style={styles.press} onPress={submit}>
+                        <Text style={styles.pressText}>Submit</Text>
+                    </Pressable>
                 </View>
             </View>
         </SafeAreaView>
@@ -54,5 +63,17 @@ const styles = StyleSheet.create({
     text:{
         color:"black",
         paddingLeft:5
+    },
+    press:{
+        padding:12,
+        backgroundColor:'red',
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        borderRadius:10
+    },
+    pressText:{
+        color:'white',
+        fontSize:18
     }
 })

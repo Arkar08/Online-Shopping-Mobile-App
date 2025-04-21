@@ -1,7 +1,6 @@
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Image, SafeAreaView, StyleSheet, Text, View,Button, Pressable } from "react-native";
 import Input from "./components/Input";
-import Button from "./components/Button";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 const photo = require('@/assets/images/Login Photo.png')
 const eye = require('@/assets/images/eye.png')
@@ -9,6 +8,13 @@ const image = require('@/assets/images/User (1).png')
 const lock = require('@/assets/images/Group 2.png')
 
 export default function Login(){
+
+    const router = useRouter()
+
+    const login = ()=>{
+        router.replace("/GetStarted")
+    }
+
     return (
         <SafeAreaView>
             <View style={styles.main}>
@@ -29,7 +35,9 @@ export default function Login(){
                     <Link href='/ForgetPassword' style={styles.forget}>Forget Password?</Link>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <Button text='Login'/>
+                    <Pressable style={styles.press} onPress={login}>
+                        <Text style={styles.pressText}>Login</Text>
+                    </Pressable>
                 </View>
                 <View style={styles.signupContainer}>
                     <Text>Don't have An Account? <Link href='/Signup' style={styles.signUp}>Sign Up</Link></Text>
@@ -84,5 +92,17 @@ const styles = StyleSheet.create({
         width:'100%',
         height:'100%',
         objectFit:"contain"
+    },
+    press:{
+        padding:12,
+        backgroundColor:'red',
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        borderRadius:10
+    },
+    pressText:{
+        color:'white',
+        fontSize:18
     }
 })

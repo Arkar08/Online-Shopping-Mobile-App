@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     inputBox:{
         padding:15,
         paddingLeft:40,
-        borderWidth:1,
+        borderWidth:0.4,
         borderRadius:5
     },
     image:{

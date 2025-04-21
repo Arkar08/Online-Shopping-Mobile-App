@@ -1,13 +1,20 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View,Button, Pressable } from "react-native";
 import Input from "./components/Input";
-import Button from "./components/Button";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 const eye = require('@/assets/images/eye.png')
 const image = require('@/assets/images/User (1).png')
 const lock = require('@/assets/images/Group 2.png')
 
 export default function Signup(){
+
+    const router = useRouter()
+
+    const createAccount = ()=>{
+        router.replace("/(tabs)")
+    }
+
+        
     return (
         <SafeAreaView>
             <View style={styles.main}>
@@ -26,7 +33,10 @@ export default function Signup(){
                     <Text style={styles.forget}>By clicking the <Text style={styles.signUp}>Register</Text> button,you agree to the public offer.</Text>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <Button text='Create Account'/>
+                    <Pressable style={styles.press} onPress={createAccount}>
+                        <Text style={styles.pressText}>Create Account</Text>
+                    </Pressable>
+                    {/* <Button title="Create Account" color='red'/> */}
                 </View>
                 <View style={styles.signupContainer}>
                     <Text>Already have An Account? <Link href='/Login' style={styles.signUp}>Login</Link></Text>
@@ -57,7 +67,7 @@ const styles = StyleSheet.create({
         padding:10,
     },
     buttonContainer:{
-        marginTop:'20%'
+        marginTop:'20%',
     },
     signupContainer:{
         marginTop:'5%',
@@ -68,5 +78,17 @@ const styles = StyleSheet.create({
     signUp:{
         color:"red",
         textDecorationLine:"underline"
+    },
+    press:{
+        padding:12,
+        backgroundColor:'red',
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        borderRadius:10
+    },
+    pressText:{
+        color:'white',
+        fontSize:18
     }
 })

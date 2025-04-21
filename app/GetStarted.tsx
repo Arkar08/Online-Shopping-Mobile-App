@@ -1,8 +1,15 @@
-import { StyleSheet, Text, View,ImageBackground, StatusBar } from "react-native";
-import Button from "./components/Button";
+import { useRouter } from "expo-router";
+import { StyleSheet, Text, View,ImageBackground, StatusBar, Button, Pressable } from "react-native";
 
 const image = require('@/assets/images/backgroundImage.png')
 export default function GetStarted(){
+
+    const router = useRouter()
+
+    const handleStart = ()=>{
+        router.replace('/(tabs)')
+    }
+
     return (
         <View style={styles.container}>
             <ImageBackground source={image} resizeMode="cover" style={styles.image} />
@@ -13,7 +20,9 @@ export default function GetStarted(){
                 <Text style={styles.text}>you go !</Text>
                 <Text style={styles.textFind}>Find it here.buy it now !</Text>
                 <View>
-                    <Button text="Get Started"/>
+                    <Pressable style={styles.press} onPress={handleStart}>
+                        <Text style={styles.pressText}>Get Started</Text>
+                    </Pressable>
                 </View>
             </View>
         </View>
@@ -44,5 +53,17 @@ const styles = StyleSheet.create({
         textAlign:"center",
         color:"whitesmoke",
         paddingVertical:10
+    },
+    press:{
+        padding:12,
+        backgroundColor:'red',
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        borderRadius:10
+    },
+    pressText:{
+        color:'white',
+        fontSize:18
     }
 })
