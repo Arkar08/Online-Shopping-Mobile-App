@@ -92,7 +92,7 @@ export default function profile(){
                                             borderRadius:5
                                         }
                                     }}
-                                    placeholder={{ label: 'Select a State...', value: null }}
+                                    placeholder={{ label: 'Select a State...', value: '' }}
                                 />
                             </View>
                         </View>
@@ -130,7 +130,7 @@ export default function profile(){
                                             borderRadius:5
                                         }
                                     }}
-                                    placeholder={{ label: 'Select a Township...', value: null }}
+                                    placeholder={{ label: 'Select a Township...', value: '' }}
                                 />
                             </View>
                         </View>
