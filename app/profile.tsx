@@ -51,6 +51,10 @@ export default function profile(){
                     </Text>
                     <View style={styles.inputContainer}>
                         <View>
+                            <Text style={{color: 'black', fontWeight: 'semibold', fontSize: 15, marginBottom: 10}}>Phone Number</Text>
+                            <TextInput placeholder='Phone Number' style={styles.inputBox}/>
+                        </View>
+                        <View>
                             <Text style={{color: 'black', fontWeight: 'semibold', fontSize: 15, marginBottom: 10}}>Address</Text>
                             <TextInput placeholder='Address' style={styles.inputBox}/>
                         </View>

@@ -28,7 +28,9 @@ export default function TabLayout() {
 
       <Tabs.Screen name='cart' options={{
         title:"Cart",
-        headerShown:false,
+        headerShown:true,
+        headerTitleAlign:"center",
+        headerTintColor:"red",
         tabBarIcon:({size,color,focused})=>(
           <Ionicons name={focused ? 'cart-sharp':'cart-outline'} size={size} color={color}/>
         )
